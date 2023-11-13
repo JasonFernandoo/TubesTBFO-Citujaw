@@ -19,6 +19,7 @@ def verdict():
 
     welcome()
     file = input("Input File: ")
+    print()
     path += file
     try:
         with open(path, 'r') as file:
