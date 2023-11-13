@@ -15,20 +15,23 @@ def welcome():
         ''')
     
 def verdict():
-    path = "html\\"
 
-    welcome()
-    file = input("Input File: ")
-    print()
-    path += file
-    try:
-        with open(path, 'r') as file:
-            content = file.read()
-            print(content)
-    except FileNotFoundError:
-        print(f"The file at {path} was not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    while True:
+        path = "html\\"
+        welcome()
+        file = input("Input File: ")
+        print()
+        path += file
+        try:
+            with open(path, 'r') as file:
+                content = file.read()
+                print(content)
+            break
+        except FileNotFoundError:
+            print(f"The file at {path} was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
     print()
     createToken(path)
     
