@@ -83,6 +83,7 @@ def createToken(text):
     file = open(text, encoding="utf8")
     characters = file.read()
     file.close()
+    print(characters)
     
     tokens = lex(characters, token_rules)
     tokenResult = []

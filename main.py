@@ -23,6 +23,7 @@ def verdict():
     print("File name: " + str(args.file.name))
     print()
     createToken(args.file.name)
+    print()
     
 if __name__ == "__main__":
     verdict()
