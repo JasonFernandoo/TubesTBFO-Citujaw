@@ -15,25 +15,14 @@ def welcome():
         ''')
     
 def verdict():
+    arg = argparse.ArgumentParser()
+    arg.add_argument('file', type = argparse.FileType('r'))
+    args = arg.parse_args()
 
-    while True:
-        path = "html\\"
-        welcome()
-        file = input("Input File: ")
-        print()
-        path += file
-        try:
-            with open(path, 'r') as file:
-                content = file.read()
-                print(content)
-            break
-        except FileNotFoundError:
-            print(f"The file at {path} was not found.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
+    welcome()
+    print("File name: " + str(args.file.name))
     print()
-    createToken(path)
+    createToken(args.file.name)
     
 if __name__ == "__main__":
     verdict()
