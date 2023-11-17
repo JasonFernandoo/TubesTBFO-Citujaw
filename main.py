@@ -27,7 +27,7 @@ def verdict():
     welcome()
     print("File name: " + str(args.html))
     print()
-    print(parse_html(args.html))
+    createToken(args.html)
     print()
     
 if __name__ == "__main__":
