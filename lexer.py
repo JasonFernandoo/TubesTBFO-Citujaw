@@ -80,7 +80,8 @@ token_rules = [
 
 def createToken(text):
     # Read file
-    file = open(text, encoding="utf8")
+    path = "html\\" + text
+    file = open(path, encoding="utf8")
     characters = file.read()
     file.close()
     print(characters)

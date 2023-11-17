@@ -13,16 +13,21 @@ def welcome():
 \_| |_/ \_/ \_|  |_/\_____/  \____/\_| |_/\____/ \____/\_| \_/\____/\_| \_|
                                                                                                            
         ''')
-    
+
 def verdict():
+    pda_path = "pda_folder/"
+    html_path = "html_folder/"
+
     arg = argparse.ArgumentParser()
-    arg.add_argument('file', type = argparse.FileType('r'))
+    arg.add_argument('pda', type=str, default=pda_path)
+    arg.add_argument('html', type=str, default=html_path)
+    
     args = arg.parse_args()
 
     welcome()
-    print("File name: " + str(args.file.name))
+    print("File name: " + str(args.html))
     print()
-    createToken(args.file.name)
+    print(parse_html(args.html))
     print()
     
 if __name__ == "__main__":
