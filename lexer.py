@@ -2,35 +2,90 @@ import os
 import re
 import sys
 
-def lex(text, token_rules):
-    pos = 0
-    line = 1 
-    tokens = []
+def lex(html):
+    stack = []
+    i = 0
+    while i < len(html):
+        char = html[i]
 
-    while (pos < len(text)):
-        if text[pos] == '\n':
-            line += 1
+        if char == '<':
+            if html.startswith('!--', i + 1) or html.startswith('?', i + 1) or html.startswith('![CDATA[', i + 1):
+                end = html.find('-->', i + 1) if html.startswith('!--', i + 1) else \
+                    html.find('?>', i + 1) if html.startswith('?', i + 1) else \
+                    html.find(']]>', i + 1)
+                if end == -1:
+                    return False
+                i = end + 3 if html.startswith('!', i + 1) else end
+            else:
+                tag_end = html.find('>', i)
+                if tag_end == -1:
+                    return False
 
-        flag = None
-        for pattern, tag in token_rules:
-            regex = re.compile(pattern)
+                tag_content = html[i + 1:tag_end]
+                if tag_content.startswith('/'):
+                    if not stack or stack.pop() != tag_content[1:]:
+                        return False
+                else:
+                    tag_name, _, _ = tag_content.partition(' ')
+                    if tag_name.endswith('/'):
+                        tag_name = tag_name[:-1]
+                    stack.append(tag_name)
 
-            flag = regex.match(text, pos)
-
-            if flag:
-                if tag:
-                    token = (tag, flag.group(0), line) 
-                    tokens.append(token)
-                break
-
-        if not flag:
-            print("SYNTAX ERROR !!!")
-            print(f'Error Expression at line {line}: {text.splitlines()[line - 1]}')
-            sys.exit(1)
+                i = tag_end + 1
         else:
-            pos = flag.end(0)
+            i += 1
 
-    return tokens
+    return len(stack) == 0
+
+def checkhtml(html):
+    html = "html\\" + html
+
+    file = open(html, encoding="utf8")
+    characters = file.read()
+    file.close()
+    print(characters)
+
+    if characters:
+        # Test the HTML checker with HTML content read from a file
+        is_valid = lex(characters)
+
+        if is_valid:
+            print()
+            print("Accepted !!!")
+        else:
+            print()
+            print("SYNTAX ERROR !!!")
+
+
+# def lex(text, token_rules):
+#     pos = 0
+#     line = 1 
+#     tokens = []
+
+#     while (pos < len(text)):
+#         if text[pos] == '\n':
+#             line += 1
+
+#         flag = None
+#         for pattern, tag in token_rules:
+#             regex = re.compile(pattern)
+
+#             flag = regex.match(text, pos)
+
+#             if flag:
+#                 if tag:
+#                     token = (tag, flag.group(0), line) 
+#                     tokens.append(token)
+#                 break
+
+#         if not flag:
+#             print("SYNTAX ERROR !!!")
+#             print(f'Error Expression at line {line}: {text.splitlines()[line - 1]}')
+#             sys.exit(1)
+#         else:
+#             pos = flag.end(0)
+
+#     return tokens
 
 token_rules = [
 

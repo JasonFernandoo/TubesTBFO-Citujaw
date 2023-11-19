@@ -15,8 +15,8 @@ def welcome():
         ''')
 
 def verdict():
-    pda_path = "pda_folder/"
-    html_path = "html_folder/"
+    pda_path = "pda/"
+    html_path = "html/"
 
     arg = argparse.ArgumentParser()
     arg.add_argument('pda', type=str, default=pda_path)
@@ -27,8 +27,7 @@ def verdict():
     welcome()
     print("File name: " + str(args.html))
     print()
-    createToken(args.html)
-    print()
+    checkhtml(args.html)
     
 if __name__ == "__main__":
     verdict()
