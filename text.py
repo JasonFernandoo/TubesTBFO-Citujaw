@@ -28,12 +28,18 @@ def compute_pda(input_string, parsed_lines):
                 if (len(listInput(production[4])) ==  1):
                     if (production[4] != '$'):
                         stack.pop()
-                        stack.append(input_string[i])
+                        if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style"):
+                            stack.append("att")
+                        else:
+                            stack.append(input_string[i])
                     else:
                         stack.pop()
                         break
                 elif (len(listInput(production[4])) ==  2):
-                    stack.append(input_string[i])
+                    if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style"):
+                            stack.append("att")
+                    else:
+                        stack.append(input_string[i])
                 
         previous_stack_symbol = current_stack_symbol
         current_stack_symbol = stack[len(stack) - 1]
