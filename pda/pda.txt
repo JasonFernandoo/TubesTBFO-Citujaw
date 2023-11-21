@@ -1,34 +1,13 @@
 Q Q2 F
-< h t m l > /
-Z < h t m l /
+< html > / 
+Z < hStml / 
 Q
 Z 
 F
 Q < Z Q <Z
-Q h < Q h<
-Q t h Q th
-Q m t Q mt
-Q l m Q lm
-Q > l Q2 >l
-Q < Z Q <Z
-Q b < Q b<
-Q o b Q ob
-Q d o Q do
-Q y d Q yd
-Q > y Q2 >y
+Q html < Q html<
+Q > html Q2 >html
 Q2 < > Q2 >
-Q2 / > Q2 e
-Q2 b y Q2 e
-Q2 o d Q2 e
-Q2 d o Q2 e
-Q2 y b Q2 e
-Q2 > < Q2 e
-Q2 e Z F e 
-Q2 < > Q2 >
-Q2 / > Q2 e
-Q2 h l Q2 e
-Q2 t m Q2 e
-Q2 m t Q2 e
-Q2 l h Q2 e
-Q2 > < Q2 e
-Q2 e Z F e 
+Q2 / > Q2 $
+Q2 html
+Q2 $ Z F $

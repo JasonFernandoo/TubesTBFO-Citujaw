@@ -38,8 +38,8 @@ def compute_pda(input_string, parsed_lines):
 
 def main():
     fh = FileHandler()
-    automata_file_path = "pda/pdajb.txt"
-    # automata_file_path = input('Enter the automata file path: ')
+    # automata_file_path = "pda/pda.txt"
+    automata_file_path = input('Enter the automata file path: ')
     lines = fh.readFile(automata_file_path)
     print('Reading Automata File')
     print('Automata File Successfully Read')
