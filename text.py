@@ -1,9 +1,15 @@
 from FileHandler import FileHandler
 import time
+import re
+
+def listInput(input):
+    parsed_list = re.findall(r"att|[a-zA-Z]+|id|=|'|<|>|/|[^<>/\s]+", input)
+    return parsed_list
 
 def compute_pda(input_string, parsed_lines):
     stack = []
-    input_string += '$'
+    input_string = listInput(input_string)
+    input_string.append('$')
     init_stack_symbol = parsed_lines['initial_stack']
     stack.append(init_stack_symbol)
     final_states = parsed_lines['final_states']
@@ -12,24 +18,26 @@ def compute_pda(input_string, parsed_lines):
 
     current_stack_symbol = init_stack_symbol
     current_state = initial_state
-
+    
     print('State\tInput\tStack\tMove')
     print('{}\t {}\t {}\t ({}, {})'.format(current_state, '_', 'Z', current_stack_symbol, stack))
-    for char in input_string:
+    for i in range (len(input_string)):
         for production in productions:
-            if ((production[0] == current_state) and (production[1] == char) and (production[2] == current_stack_symbol)):
+            if ((production[0] == current_state) and (str(production[1]) == str(input_string[i])) and (production[2] == current_stack_symbol)):
                 current_state = production[3]
-                if (len(production[4]) == 2):
-                    stack.append(char)
-                elif (len(production[4]) == 3):
-                    stack.append(char)
-                    stack.append(char)
+                if (len(listInput(production[4])) ==  1):
+                    for i in range (len(listInput(production[4])) - 1, -1, -1):
+                        stack.append(listInput(production[4])[i])
+                elif (len(listInput(production[4])) ==  2):
+                    for i in range (len(listInput(production[4])) - 1, -1, -1):
+                        stack.append(listInput(production[4])[i])
                 elif ((production[4] == '$') and (len(stack) != 1)):
                     stack.pop()
                     break
+                
         previous_stack_symbol = current_stack_symbol
         current_stack_symbol = stack[len(stack) - 1]
-        print('{}\t {}\t {}\t ({}, {})'.format(current_state, char, previous_stack_symbol, current_stack_symbol, stack))
+        print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
 
     if (current_state in final_states):
         print('String accepted by PDA.')
@@ -38,7 +46,6 @@ def compute_pda(input_string, parsed_lines):
 
 def main():
     fh = FileHandler()
-    # automata_file_path = "pda/pda.txt"
     automata_file_path = input('Enter the automata file path: ')
     lines = fh.readFile(automata_file_path)
     print('Reading Automata File')
