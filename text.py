@@ -26,17 +26,18 @@ def compute_pda(input_string, parsed_lines):
             if ((production[0] == current_state) and (str(production[1]) == str(input_string[i])) and (production[2] == current_stack_symbol)):
                 current_state = production[3]
                 if (len(listInput(production[4])) ==  1):
-                    for i in range (len(listInput(production[4])) - 1, -1, -1):
-                        stack.append(listInput(production[4])[i])
+                    if (production[4] != '$'):
+                        stack.pop()
+                        stack.append(input_string[i])
+                    else:
+                        stack.pop()
+                        break
                 elif (len(listInput(production[4])) ==  2):
-                    for i in range (len(listInput(production[4])) - 1, -1, -1):
-                        stack.append(listInput(production[4])[i])
-                elif ((production[4] == '$') and (len(stack) != 1)):
-                    stack.pop()
-                    break
+                    stack.append(input_string[i])
                 
         previous_stack_symbol = current_stack_symbol
         current_stack_symbol = stack[len(stack) - 1]
+
         print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
 
     if (current_state in final_states):
