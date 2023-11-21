@@ -1,5 +1,4 @@
 import argparse
-from lexer import*
 
 def welcome():
     print("\033c", end="")
@@ -14,20 +13,20 @@ def welcome():
                                                                                                            
         ''')
 
-def verdict():
-    pda_path = "pda/"
-    html_path = "html/"
+# def verdict():
+#     pda_path = "pda/"
+#     html_path = "html/"
 
-    arg = argparse.ArgumentParser()
-    arg.add_argument('pda', type=str, default=pda_path)
-    arg.add_argument('html', type=str, default=html_path)
+#     arg = argparse.ArgumentParser()
+#     arg.add_argument('pda', type=str, default=pda_path)
+#     arg.add_argument('html', type=str, default=html_path)
     
-    args = arg.parse_args()
+#     args = arg.parse_args()
 
-    welcome()
-    print("File name: " + str(args.html))
-    print()
-    checkhtml(args.html)
+#     welcome()
+#     print("File name: " + str(args.html))
+#     print()
+#     checkhtml(args.html)
     
-if __name__ == "__main__":
-    verdict()
+# if __name__ == "__main__":
+#     verdict()
