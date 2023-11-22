@@ -1,4 +1,4 @@
-Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 B1 B2 B3 B4 B5 B6 D F
+Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14 A15 A16 B1 B2 B3 B4 B5 B6 D F
 < html > / id = " any head class style title link script href src
 Z < html > att " = head title link script
 Q1
@@ -21,7 +21,7 @@ Q2 link < D link<
 Q2 script < D script<
 Q2 / < A2 $
 A2 html html A2 $
-A2 > < F $
+A2 > < D <
 Q2 head < Q3 head<
 Q3 > head Q3 >head
 Q3 id head A3 atthead
@@ -34,9 +34,7 @@ A3 " = Q3 $
 Q3 > att Q4 >
 Q3 > head Q4 >
 Q4 < > Q4 <
-Q4 / < A5 $
-A5 head head A5 $
-A5 > < Q2 >
+Q4 / < D <
 Q4 title < A4 title<
 A4 > title A4 >title
 Q4 link < A8 link<
@@ -62,3 +60,24 @@ A6 < > A6 <
 A6 / < A7 $
 A7 title title A7 $
 A7 > < Q4 >
+Q4 body < Q5 body<
+Q5 id body A9 attbody
+Q5 class body A9 attbody
+Q5 style body A9 attbody
+A9 = att A9 =att
+A9 " = A9 "
+A9 any " A9 $
+A9 " = Q5 $
+Q5 > att Q6 >
+Q6 < > Q6 <
+Q6 / < A10 $
+A10 body body A10 $
+A10 > < A11 >
+A11 < > A11 <
+A11 / < A12 $
+A12 head head A12 $
+A12 > < A13 >
+A13 < > A13 <
+A13 / < A14 $
+A14 html html A14 $
+A14 > < F $
