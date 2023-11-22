@@ -17,7 +17,7 @@ Q1 > att Q2 >
 Q2 < > Q2 <
 Q2 / < A2 $
 A2 html html A2 $
-A2 > < F $
+A2 > < F Z
 Q2 head < Q3 head<
 Q3 id head A3 atthead
 Q3 class head A3 atthead
