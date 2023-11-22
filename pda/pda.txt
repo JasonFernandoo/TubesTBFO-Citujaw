@@ -47,7 +47,7 @@ B2 = att B2 =att
 B2 " = B2 "
 B2 any " B2 $
 B2 " = A8 $
-A8 > att B3 $
+A8 > att Q4 >
 A4 > att A6 >
 A6 < > A6 <
 A6 / < A7 $
