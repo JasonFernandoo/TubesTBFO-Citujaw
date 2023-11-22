@@ -34,7 +34,6 @@ A3 " = Q3 $
 Q3 > att Q4 >
 Q3 > head Q4 >
 Q4 < > Q4 <
-Q4 / < D <
 Q4 title < A4 title<
 A4 > title A4 >title
 Q4 link < A8 link<
