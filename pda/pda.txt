@@ -37,8 +37,8 @@ Q4 script < A8 script<
 A4 id title B1 atttitle
 A4 class title B1 atttitle
 A4 style title B1 atttitle
-A8 href link B2 attlink
-A8 src script B2 attscript
+A8 href link B2 att
+A8 src script B2 att
 B1 = att B1 =att
 B1 " = B1 "
 B1 any " B1 $
@@ -48,8 +48,6 @@ B2 " = B2 "
 B2 any " B2 $
 B2 " = A8 $
 A8 > att B3 $
-B3 $ link Q4 >$
-B3 $ script Q4 >$
 A4 > att A6 >
 A6 < > A6 <
 A6 / < A7 $
