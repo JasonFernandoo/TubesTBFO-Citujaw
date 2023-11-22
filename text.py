@@ -3,7 +3,7 @@ import time
 import re
 
 def listInput(input):
-    parsed_list = re.findall(r"att|[a-zA-Z]+|id|=|\"|<|>|/|[^<>/\"\s]+", input)
+    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|id|=|\"|<|>|/|[^<>/\"\s]+", input)
     return parsed_list
 
 def compute_pda(input_string, parsed_lines):
@@ -28,7 +28,8 @@ def compute_pda(input_string, parsed_lines):
                 if (len(listInput(production[4])) ==  1):
                     if (production[4] != '$'):
                         stack.pop()
-                        if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style") or input_string[i] == "src" or input_string[i] == "href":
+                        if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href" 
+                            or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '=' or input_string[i] == '"'):
                             stack.append("att")
                         else:
                             stack.append(input_string[i])
@@ -36,7 +37,8 @@ def compute_pda(input_string, parsed_lines):
                         stack.pop()
                         break
                 elif (len(listInput(production[4])) ==  2):
-                    if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href"):
+                    if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href"
+                        or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '=' or input_string[i] == '"'):
                             stack.append("att")
                     else:
                         stack.append(input_string[i])
