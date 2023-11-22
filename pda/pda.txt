@@ -48,8 +48,8 @@ B2 " = B2 "
 B2 any " B2 $
 B2 " = A8 $
 A8 > att B3 $
-B3 $ link Q4 >
-B3 $ script Q4 >
+B3 $ link Q4 >$
+B3 $ script Q4 >$
 A4 > att A6 >
 A6 < > A6 <
 A6 / < A7 $
