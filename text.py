@@ -3,7 +3,7 @@ import time
 import re
 
 def listInput(input):
-    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|id|=|\"|<|>|/|[^<>/\"\s]+", input)
+    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|<div>|</div|=|\"|<|>|/|[^<>/\"\s]+", input)
     return parsed_list
 
 def compute_pda(input_string, parsed_lines):
