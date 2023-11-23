@@ -63,8 +63,9 @@ def main():
     print('Reading Automata File')
     print('Automata File Successfully Read')
 
-    input_string = input('Enter input String: ')
-    input_string = input_string.rstrip()
+    input_html = input('Input HTML file: ')
+    html_lines = fh.readFile(input_html)
+    html_content = fh.parseHTMLFile(html_lines)
     print('Loading Details from Automata File: ')
 
     parsed_lines = fh.parseFile(lines)
@@ -80,7 +81,4 @@ def main():
 
     print('Details loaded')
     print('Computing the Transition Table:')
-    compute_pda(input_string, parsed_lines)
-
-if __name__ == '__main__':
-    main()
+    compute_pda(html_content, parsed_lines)

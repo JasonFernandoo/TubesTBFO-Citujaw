@@ -46,3 +46,7 @@ class FileHandler:
                         'final_states':final_states,
                         'productions':productions}
         return parsedLines
+    
+    def parseHTMLFile(self, lines):
+        html_content = ''.join(lines)
+        return html_content
