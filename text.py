@@ -68,15 +68,15 @@ def main():
     print('Loading Details from Automata File: ')
 
     parsed_lines = fh.parseFile(lines)
-    print('States: ', parsed_lines['states'])
-    print('Input Symbols: ', parsed_lines['input_symbols'])
-    print('Stack Symbols: ', parsed_lines['stack_symbols'])
+    # print('States: ', parsed_lines['states'])
+    # print('Input Symbols: ', parsed_lines['input_symbols'])
+    # print('Stack Symbols: ', parsed_lines['stack_symbols'])
     print('Initial State: ', parsed_lines['initial_state'])
     print('Initial Stack Symbol: ', parsed_lines['initial_stack'])
     print('Final States: ', parsed_lines['final_states'])
-    print('Productions List:')
-    for production in parsed_lines['productions']:
-        print('\t', production)
+    # print('Productions List:')
+    # for production in parsed_lines['productions']:
+    #     print('\t', production)
 
     print('Details loaded')
     print('Computing the Transition Table:')

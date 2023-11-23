@@ -1,4 +1,4 @@
-import argparse
+from text import main
 
 def welcome():
     print("\033c", end="")
@@ -12,21 +12,14 @@ def welcome():
 \_| |_/ \_/ \_|  |_/\_____/  \____/\_| |_/\____/ \____/\_| \_/\____/\_| \_|
                                                                                                            
         ''')
-
-# def verdict():
-#     pda_path = "pda/"
-#     html_path = "html/"
-
-#     arg = argparse.ArgumentParser()
-#     arg.add_argument('pda', type=str, default=pda_path)
-#     arg.add_argument('html', type=str, default=html_path)
     
-#     args = arg.parse_args()
-
-#     welcome()
-#     print("File name: " + str(args.html))
-#     print()
-#     checkhtml(args.html)
-    
-# if __name__ == "__main__":
-#     verdict()
+if __name__ == "__main__":
+    welcome()
+    main()
+    while True:
+        input_flag = input('Do you want to continue? (yes/no) ')
+        if input_flag.lower() == 'no':
+            print("\033c", end="")   
+            break
+        welcome()
+        main()
