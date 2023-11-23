@@ -29,16 +29,18 @@ def compute_pda(input_string, parsed_lines):
                     if (production[4] != '$'):
                         stack.pop()
                         if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href" 
-                            or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '=' or input_string[i] == '"'):
+                            or input_string[i] == "alt" or input_string[i] == "type"):
                             stack.append("att")
                         else:
                             stack.append(input_string[i])
-                    else:
+                    elif (production[4] == '$'):
                         stack.pop()
                         break
                 elif (len(listInput(production[4])) ==  2):
+                    if (input_string[i] == '"'):
+                            stack.append(input_string[i])
                     if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href"
-                        or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '=' or input_string[i] == '"'):
+                        or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '"'):
                             stack.append("att")
                     else:
                         stack.append(input_string[i])
