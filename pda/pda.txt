@@ -11,8 +11,8 @@ Q1 id html A1 atthtml
 Q1 class html A1 atthtml
 Q1 style html A1 atthtml
 A1 = att A1 =att
-A1 " = A1 =
-A1 any att A1 =
+A1 " = A1 =att
+A1 any = A1 =
 A1 " = Q1 $
 Q1 > att Q2 >
 Q2 < > Q2 <
