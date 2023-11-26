@@ -152,7 +152,7 @@ C6 " = C6 "
 C6 submit " C6 "
 C6 reset " C6 "
 C6 button " C6 "
-C6 " type B20 $
+C6 " button B20 $
 C6 " " B20 $
 B20 > < B22 $
 B22 < > B22 <
@@ -168,8 +168,11 @@ C7 password input C7 $
 C7 email input C7 $
 C7 number input C7 $
 C7 checkbox input C7 $
-C7 " att A26 $
+C7 " text A26 $
 C7 " " A26 $
+A26 / < A27 $
+A27 form form A27 $
+A27 > < Q6 >
 B21 > < A26 >
 A22 id div B17 attdiv
 A22 class div B17 attdiv

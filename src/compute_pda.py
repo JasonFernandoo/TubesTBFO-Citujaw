@@ -98,7 +98,7 @@ def compute_pda(input_string, parsed_lines):
         previous_stack_symbol = current_stack_symbol
         current_stack_symbol = stack[len(stack) - 1]
 
-        # print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
+        print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
 
     if (current_state in final_states):
         print('''
