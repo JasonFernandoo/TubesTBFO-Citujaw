@@ -1,6 +1,6 @@
-Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14 A15 A16 B1 B2 B3 B4 B5 B6 D F 
-< html > / id = " any head class style title link script href src rel h1 h2 h3 h4 h5 h6 p strong small em b abbr <div> </div
-Z < html > att " = head title link script h1 h2 h3 h4 h5 h6 p strong small em b abbr
+Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14 A15 A16 A17 B1 B2 B3 B4 B5 B6 C1 C2 D F 
+< html > / id = " any head class style title link script href src rel h1 h2 h3 h4 h5 h6 p strong small em b br hr
+Z < html > att " = head title link script h1 h2 h3 h4 h5 h6 p strong small em b abbr br hr
 Q1
 Z 
 F
@@ -96,6 +96,23 @@ Q6 small < A15 small<
 Q6 em < A15 em<
 Q6 b < A15 b<
 Q6 abbr < A15 abbr<
+Q6 br < A17 br<
+Q6 hr < A17 hr<
+A17 id br C3 att
+A17 class br C3 att
+A17 style br C3 att
+A17 id hr C3 att
+A17 class hr C3 att
+A17 style hr C3 att
+C3 = att C3 =att
+C3 " = C3 "
+C3 any " C3 "
+C3 " att A17 $
+C3 " " A17 $
+A17 > att A17 >
+A17 < > Q6 $
+A17 > br Q6 $
+A17 > hr Q6 $ 
 A15 id h1 B4 atth1
 A15 class h1 B4 atth1
 A15 style h1 B4 atth1
