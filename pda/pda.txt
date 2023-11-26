@@ -1,6 +1,6 @@
-Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14 A15 A16 A17 B1 B2 B3 B4 B5 B6 C1 C2 D F 
-< html > / id = " any head class style title link script href src rel h1 h2 h3 h4 h5 h6 p strong small em b br hr
-Z < html > att " = head title link script h1 h2 h3 h4 h5 h6 p strong small em b abbr br hr
+Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14 A15 A16 A17 A18 A19 A20 B1 B2 B3 B4 B5 B6 B7 B8 B9 B10 B11 B12 B13 C1 C2 C3 C4 D F 
+< html > / id = " any head class style title link script href src rel h1 h2 h3 h4 h5 h6 p strong small em b br hr table th td tr  div> </div a
+Z < html > att " = head title link script h1 h2 h3 h4 h5 h6 p strong small em b abbr br hr table th td tr div> </div a
 Q1
 Z 
 F
@@ -96,23 +96,93 @@ Q6 small < A15 small<
 Q6 em < A15 em<
 Q6 b < A15 b<
 Q6 abbr < A15 abbr<
-Q6 br < A17 br<
-Q6 hr < A17 hr<
-A17 id br C3 att
-A17 class br C3 att
-A17 style br C3 att
-A17 id hr C3 att
-A17 class hr C3 att
-A17 style hr C3 att
+Q6 br < A16 br<
+Q6 hr < A16 hr<
+Q6 a < A15 a<
+Q6 table < A17 table<
+Q6 img < A21 img<
+A21 src img B14 attimg
+B14 = att B15 =
+B15 " = B15 "
+B15 any " B15 "
+B15 " att B16 $
+B15 " " B16 $
+B16 alt att C5 attatt
+C5 = att C5 =
+C5 " = C5 "
+C5 any " C5 "
+C5 " att B16 $
+C5 " " B16 $
+B16 > img Q6 $
+A17 id table B6 atttable
+A17 class table B6 atttable
+A17 style table B6 atttable
+B6 = att B6 =att
+B6 " = B6 "
+B6 any " B6 "
+B6 " att A17 $
+B6 " " A17 $
+A17 > att A18 >
+A17 > table A18 >table
+A18 < > A18 <
+A18 tr < A19 tr<
+A19 id tr B7 atttr
+A19 class tr B7 atttr
+A19 style tr B7 atttr
+B7 = att B7 =att
+B7 " = B7 "
+B7 any " B7 "
+B7 " att A19 $
+B7 " " A19 $
+A19 > att A20 >
+A19 > tr A20 >tr
+A20 < > A20 <
+A20 td < B8 td<
+A20 th < B8 th<
+B8 id td C4 atttd
+B8 class td C4 atttd
+B8 style td C4 atttd
+B8 id th C4 attth
+B8 class th C4 attth
+B8 style th C4 atth
+C4 = att C4 =att
+C4 " = C4 "
+C4 any " C4 "
+C4 " att B8 $
+C4 " " B8 $
+B8 > att B9 >
+B8 > td B9 >td
+B8 > th B9 >th
+B9 any > B9 >
+B9 < > B10 <
+B10 / < B11 $
+B11 td td B11 $
+B11 th th B11 $
+B11 > < A20 >
+A20 < > A20 <
+A20 / < B12 $
+B12 tr tr B12 $
+B12 > < A18 >
+A18 < > A18 <
+A18 / < B13 $
+B13 table table B13 $
+B13 > < Q6 $
+A16 id br C3 att
+A16 class br C3 att
+A16 style br C3 att
+A16 id hr C3 att
+A16 class hr C3 att
+A16 style hr C3 att
 C3 = att C3 =att
 C3 " = C3 "
 C3 any " C3 "
-C3 " att A17 $
-C3 " " A17 $
-A17 > att A17 >
-A17 < > Q6 $
-A17 > br Q6 $
-A17 > hr Q6 $ 
+C3 " att A16 $
+C3 " " A16 $
+A16 > att A16 >
+A16 < > Q6 $
+A16 > br Q6 $
+A16 > hr Q6 $ 
+A15 href a B4 atta
 A15 id h1 B4 atth1
 A15 class h1 B4 atth1
 A15 style h1 B4 atth1
@@ -155,6 +225,7 @@ B4 any " B4 "
 B4 " att A15 $
 B4 " " A15 $
 A15 > att B3 >att
+A15 > a B3 >a
 A15 > h1 B3 >h1
 A15 > h2 B3 >h2
 A15 > h3 B3 >h3
@@ -171,6 +242,7 @@ B3 any > B5 >
 B5 < any C1 <
 B3 < > C1 <
 C1 / < C2 $
+C2 a a C2 $
 C2 h1 h1 C2 $
 C2 h2 h2 C2 $ 
 C2 h3 h3 C2 $ 
