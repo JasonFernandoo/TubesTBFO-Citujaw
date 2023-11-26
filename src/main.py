@@ -1,4 +1,4 @@
-from text import main
+from compute_pda import main
 
 def welcome():
     print("\033c", end="")
@@ -16,10 +16,3 @@ def welcome():
 if __name__ == "__main__":
     welcome()
     main()
-    while True:
-        input_flag = input('Do you want to continue? (yes/no) ')
-        if input_flag.lower() == 'no':
-            print("\033c", end="")   
-            break
-        welcome()
-        main()
