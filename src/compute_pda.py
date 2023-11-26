@@ -14,7 +14,7 @@ def loader():
     print()
 
 def listInput(input):
-    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|<!--|-->|GET|POST|text|password|email|number|checkbox|submit|reset|button|=|\"|<|>|/|[^<>/\"\s]+", input)
+    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|<!--|-->|action|method|GET|POST|text|password|email|number|checkbox|submit|reset|button|=|\"|<|>|/|[^<>/\"\s]+", input)
     return parsed_list
 
 def parse_pda_file(lines):
@@ -79,6 +79,8 @@ def compute_pda(input_string, parsed_lines):
                         if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href" 
                             or input_string[i] == "alt" or input_string[i] == "type"):
                             stack.append("att")
+                        if (input_string[i] == "method"):
+                            stack.append("method")
                         else:
                             stack.append(input_string[i])
                     elif (production[4] == '$'):
@@ -87,7 +89,7 @@ def compute_pda(input_string, parsed_lines):
                 elif (len(listInput(production[4])) ==  2):
                     if (input_string[i] == '"'):
                             stack.append(input_string[i])
-                    if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href"
+                    if (input_string[i] == "id" or input_string[i] == "class" or input_string[i] == "style" or input_string[i] == "src" or input_string[i] == "href" or input_string[i] == "action" or input_string[i] == "method"
                         or input_string[i] == "alt" or input_string[i] == "type" or input_string[i] == '"'):
                             stack.append("att")
                     else:
@@ -96,7 +98,7 @@ def compute_pda(input_string, parsed_lines):
         previous_stack_symbol = current_stack_symbol
         current_stack_symbol = stack[len(stack) - 1]
 
-        # print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
+        print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
 
     if (current_state in final_states):
         print('''
