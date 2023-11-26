@@ -14,7 +14,7 @@ def loader():
     print()
 
 def listInput(input):
-    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|=|\"|<|>|/|[^<>/\"\s]+", input)
+    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|<!--|-->|GET|POST|text|password|email|number|checkbox|submit|reset|button|=|\"|<|>|/|[^<>/\"\s]+", input)
     return parsed_list
 
 def parse_pda_file(lines):
@@ -99,7 +99,6 @@ def compute_pda(input_string, parsed_lines):
         # print('{}\t {}\t {}\t ({}, {})'.format(current_state, input_string[i], previous_stack_symbol, current_stack_symbol, stack))
 
     if (current_state in final_states):
-        print("\033c", end="")
         print('''
       db        .g8"""bgd   .g8"""bgd `7MM"""YMM  `7MM"""Mq. MMP""MM""YMM `7MM"""YMM  `7MM"""Yb.   
      ;MM:     .dP'     `M .dP'     `M   MM    `7    MM   `MM.P'   MM   `7   MM    `7    MM    `Yb. 
@@ -110,7 +109,6 @@ def compute_pda(input_string, parsed_lines):
 .AMA.   .AMMA.  `"bmmmd'    `"bmmmd'  .JMMmmmmMMM .JMML.        .JMML.    .JMMmmmmMMM .JMMmmmdP'                                                                                                                        
             ''')
     else:
-        print("\033c", end="")
         print('''
 `7MM"""Mq.  `7MM"""YMM     `7MMF'`7MM"""YMM    .g8"""bgd MMP""MM""YMM `7MM"""YMM  `7MM"""Yb.   
   MM   `MM.   MM    `7       MM    MM    `7  .dP'     `M P'   MM   `7   MM    `7    MM    `Yb. 
