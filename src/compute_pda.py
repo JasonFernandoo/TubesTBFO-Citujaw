@@ -14,7 +14,7 @@ def loader():
     print()
 
 def listInput(input):
-    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|<div>|</div>|=|\"|<|>|/|[^<>/\"\s]+", input)
+    parsed_list = re.findall(r"att|[a-zA-Z1-9]+|=|\"|<|>|/|[^<>/\"\s]+", input)
     return parsed_list
 
 def parse_pda_file(lines):
